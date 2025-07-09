@@ -64,6 +64,51 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        {/* Apple Touch Icon */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        {/* Android Chrome Icons */}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/android-chrome-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href="/android-chrome-512x512.png"
+        />
+        {/* OGP */}
+        <meta
+          property="og:title"
+          content="Yuta Nishizaki - Frontend & WordPress Developer"
+        />
+        <meta
+          property="og:description"
+          content="Portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands. Specializing in premium web development, React, Next.js, and international projects."
+        />
+        <meta property="og:image" content="/ogp.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yuta-nishizaki.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Yuta Nishizaki - Frontend & WordPress Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands."
+        />
+        <meta name="twitter:image" content="/ogp.jpg" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
