@@ -1,0 +1,17 @@
+export const tileProperties: Record<number, { walkable: boolean }> = {
+  1: { walkable: true },
+  4: { walkable: true },
+  5: { walkable: true },
+  6: { walkable: false },
+  8: { walkable: false },
+  9: { walkable: false },
+  10: { walkable: false },
+  14: { walkable: true },
+  17: { walkable: true },
+  18: { walkable: false },
+  19: { walkable: false },
+  20: { walkable: false },
+  22: { walkable: true },
+  25: { walkable: false },
+  26: { walkable: false },
+};
