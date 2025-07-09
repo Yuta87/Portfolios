@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Quest
 
-## Getting Started
+_A gamified portfolio built with Next.js, Three.js, and more._
 
-First, run the development server:
+---
+
+## 1. Project Overview / プロジェクト概要
+
+Portfolio Quest is an interactive, game-inspired portfolio site. Explore, interact, and discover the creator's skills and works in a pixel-art RPG world.
+
+Portfolio Quest は、ピクセルアート RPG の世界で作者のスキルや作品を探索・体験できるインタラクティブなポートフォリオサイトです。
+
+---
+
+## 2. Tech Stack / 技術スタック
+
+- **Next.js 14 (App Router)**
+- **TypeScript 5.x**
+- **Tailwind CSS**
+- **Three.js / React Three Fiber (R3F)**
+- **Zustand (State Management)**
+- **Framer Motion (Animation)**
+- **Vercel Hosting**
+- **GitHub API**
+
+---
+
+## 3. Directory Structure / ディレクトリ構成
+
+```
+phase2/
+  src/
+    app/           # Next.js app directory / Next.jsアプリ本体
+    assets/        # Images, audio, shaders, sprites / 画像・音声・シェーダ・スプライト
+    components/    # React components (game, UI, webgl) / Reactコンポーネント
+    data/          # Static data (maps, npcs, portfolio, etc.) / 静的データ
+    hooks/         # Custom React hooks / カスタムフック
+    styles/        # Global styles / グローバルスタイル
+    types/         # TypeScript types / 型定義
+    utils/         # Utility functions / ユーティリティ関数
+```
+
+---
+
+## 4. Getting Started / セットアップ手順
+
+### Prerequisites / 前提条件
+
+- Node.js 18+
+- npm (or yarn)
+
+### Install dependencies / 依存関係のインストール
+
+```bash
+cd phase2
+npm install
+# or
+# yarn install
+```
+
+### Run development server / 開発サーバーの起動
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be available at [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+アプリは [http://localhost:3000](http://localhost:3000) で確認できます。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 5. Development, Build & Deployment / 開発・ビルド・デプロイ方法
 
-To learn more about Next.js, take a look at the following resources:
+### Build for production / 本番ビルド
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Start production server / 本番サーバー起動
 
-## Deploy on Vercel
+```bash
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy / デプロイ
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Deploy to [Vercel](https://vercel.com/) for best compatibility.
+- Vercel へのデプロイを推奨します。
+
+---
+
+## 6. Contribution / コントリビュート方法
+
+1. Fork this repository / このリポジトリをフォーク
+2. Create a new branch / 新しいブランチを作成
+3. Make your changes / 変更を加える
+4. Submit a Pull Request / プルリクエストを送信
+
+Please follow the coding conventions described in `.cursorrules`.
+`.cursorrules`に記載されたコーディング規約に従ってください。
+
+---
+
+## 7. License / ライセンス
+
+This project is licensed under the MIT License.
+本プロジェクトは MIT ライセンスで公開されています。
