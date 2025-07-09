@@ -15,11 +15,11 @@ export const generateMetadata = () => ({
     title: "Yuta Nishizaki Portfolio | Home",
     description:
       "Welcome to the portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands.",
-    url: "https://yuta-nishizaki.com",
+    url: "https://portfolio-blush-theta-48.vercel.app/en",
     siteName: "Yuta Nishizaki Portfolio",
     images: [
       {
-        url: "https://yuta-nishizaki.com/og-image.jpg",
+        url: "/ogp.jpg",
         width: 1200,
         height: 630,
         alt: "Yuta Nishizaki Portfolio OGP",
@@ -33,12 +33,12 @@ export const generateMetadata = () => ({
     title: "Yuta Nishizaki Portfolio | Home",
     description:
       "Welcome to the portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands.",
-    creator: "@yuta_nishizaki",
-    images: ["https://yuta-nishizaki.com/og-image.jpg"],
+    creator: "@nszk4922",
+    images: ["/ogp.jpg"],
   },
 });
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
   return (
     <>
       <Navigation />

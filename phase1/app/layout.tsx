@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     title: "Yuta Nishizaki - Frontend & WordPress Developer",
     description:
       "Portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands. Specializing in premium web development, React, Next.js, and international projects.",
-    url: "https://yuta-nishizaki.com",
+    url: "https://portfolio-blush-theta-48.vercel.app/en",
     siteName: "Yuta Nishizaki Portfolio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://yuta-nishizaki.com/og-image.jpg",
+        url: "/ogp.jpg",
         width: 1200,
         height: 630,
         alt: "Yuta Nishizaki Portfolio OGP",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     title: "Yuta Nishizaki - Frontend & WordPress Developer",
     description:
       "Portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands.",
-    creator: "@yuta_nishizaki",
-    images: ["https://yuta-nishizaki.com/og-image.jpg"],
+    creator: "@nszk4922",
+    images: ["/ogp.jpg"],
   },
   robots: {
     index: true,
@@ -97,7 +97,10 @@ export default function RootLayout({
         />
         <meta property="og:image" content="/ogp.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yuta-nishizaki.com" />
+        <meta
+          property="og:url"
+          content="https://portfolio-blush-theta-48.vercel.app/en"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"

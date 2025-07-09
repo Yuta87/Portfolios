@@ -92,7 +92,7 @@ const Hero = () => {
             onClick={scrollToAbout}
             className="px-8 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
-            Learn More About Me
+            Learn More
           </button>
           <a
             href="mailto:nszk.yuta@gmail.com"
