@@ -3,23 +3,26 @@
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import { experiences } from "@/data/experience";
 import { useI18n } from "@/hooks/useI18n";
+import { useEffect } from "react";
+import { intersectionAnimation } from "@/lib/animations/fadeInUp";
 
 const Experience = () => {
   const { locale } = useI18n();
   const t = locale === "ja" ? experiences.ja : experiences.en;
   const isJapanese = locale === "ja";
 
+  useEffect(() => intersectionAnimation(), []);
   return (
     <section id="experience" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 js_fadeInUp">
             Professional{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Experience and Achievements
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto js_fadeInUp">
             {isJapanese
               ? "多様な役割と業界での成長、学び、卓越した結果を提供する旅。"
               : "A journey of growth, learning, and delivering exceptional results across diverse roles and industries."}
@@ -27,10 +30,10 @@ const Experience = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-500 hidden md:block"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-500 hidden md:block js_fadeInUp"></div>
           <div className="space-y-12">
             {t.map((exp, index) => (
-              <div key={exp.id} className="relative">
+              <div key={exp.id} className="relative js_fadeInUp">
                 <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full hidden md:block"></div>
                 <div className="md:ml-16">
                   <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-gray-700 transition-all duration-300">

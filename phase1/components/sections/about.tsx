@@ -3,6 +3,8 @@
 import { Globe, Users, Code, Briefcase } from "lucide-react";
 import { personalInfo } from "@/data/personal";
 import { useI18n } from "@/hooks/useI18n";
+import { useEffect } from "react";
+import { intersectionAnimation } from "@/lib/animations/fadeInUp";
 
 const About = () => {
   const { locale } = useI18n();
@@ -63,25 +65,26 @@ const About = () => {
         },
       ];
 
+  useEffect(() => intersectionAnimation(), []);
   return (
     <section id="about" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 js_fadeInUp">
             About{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">{t.summary}</p>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto js_fadeInUp">{t.summary}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6 js_fadeInUp">
               {isJapanese ? "経歴" : "My Journey"}
             </h3>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed js_fadeInUp">
               <p>
                 {isJapanese
                   ? "オランダ・ハーグを拠点に、国際的な視点を持つウェブ開発者として活動しています。インターンからシニア開発者へと成長し、多様なチームと協力して、世界中のクライアントにプレミアムソリューションを提供してきました。"
@@ -91,7 +94,7 @@ const About = () => {
                 {isJapanese
                   ? "3年以上の経験を持ち、WordPress開発を専門としながら、ReactやNext.jsなどの最新のフレームワークにも取り組んでいます。私のバックグラウンドは、規律、チームワーク、プレッシャー下でのパフォーマンス能力を育んできました。これらの特性は、開発の卓越性に直接結びついています。"
                   : `
-                    With 3+ years of experience, I&apos;ve specialized in WordPress
+                    With 3+ years of experience, I've specialized in WordPress
                     development while expanding into modern frameworks like React
                     and Next.js. My background has instilled discipline, teamwork,
                     and the ability to perform under pressure—qualities that
@@ -101,15 +104,16 @@ const About = () => {
               <p>
                 {isJapanese
                   ? `
-                私は、機能的なウェブサイトだけでなく、結果を生む魅力的なデジタル体験の創造に情熱を注いでいます。コーポレートラグジュアリーサイトやクリエイティブプラットフォームなど、各プロジェクトに細心の注意を払い、期待を超えることを目指しています。
-                `
+                    私は、機能的なウェブサイトだけでなく、結果を生む魅力的なデジタル体験の創造に情熱を注いでいます。コーポレートラグジュアリーサイトやクリエイティブプラットフォームなど、各プロジェクトに細心の注意を払い、期待を超えることを目指しています。
+                    `
                   : `  
-                I&apos;m passionate about creating not just functional websites,
-                but engaging digital experiences that drive results. Whether
-                it&apos;s a corporate luxury site or a creative platform, I
-                approach each project with meticulous attention to detail and a
-                commitment to exceeding expectations.
-                `}
+                    I'm passionate about creating not just functional websites,
+                    but engaging digital experiences that drive results. Whether
+                    it's a corporate luxury site or a creative platform, I
+                    approach each project with meticulous attention to detail and a
+                    commitment to exceeding expectations.
+                    `
+                }
               </p>
             </div>
             <div className="mt-8">
@@ -120,7 +124,7 @@ const About = () => {
                 {t.languages.map((lang, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center p-3 bg-gray-800 rounded-lg"
+                    className="js_fadeInUp flex justify-between items-center p-3 bg-gray-800 rounded-lg"
                   >
                     <span className="text-gray-300">{lang.name}</span>
                     <span className="text-sm px-2 py-1 bg-blue-500/20 text-blue-400 rounded">
@@ -132,14 +136,14 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6 js_fadeInUp">
               {isJapanese ? "私の強み" : "What Sets Me Apart"}
             </h3>
             <div className="space-y-6">
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300"
+                  className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300 js_fadeInUp"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 p-2 bg-gray-800 rounded-lg">

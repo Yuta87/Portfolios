@@ -3,6 +3,8 @@
 import { Code, Database, Wrench, Palette, Globe, Zap } from "lucide-react";
 import { skillCategories } from "@/data/skills";
 import { useI18n } from "@/hooks/useI18n";
+import { useEffect } from "react";
+import { intersectionAnimation } from "@/lib/animations/fadeInUp";
 
 const Skills = () => {
   const { locale } = useI18n();
@@ -58,17 +60,18 @@ const Skills = () => {
         },
       ];
 
+  useEffect(() => intersectionAnimation(), []);
   return (
     <section id="skills" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 js_fadeInUp">
             Technical{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Skills
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto js_fadeInUp">
             {isJapanese
               ? "最新のウェブ技術と開発プラクティスにおける包括的な専門知識。"
               : "Comprehensive expertise across modern web technologies and development practices."}
@@ -78,7 +81,7 @@ const Skills = () => {
           {t.map((category, index) => (
             <div
               key={index}
-              className="bg-gray-800/50 p-6 rounded-lg border border-gray-700"
+              className="js_fadeInUp bg-gray-800/50 p-6 rounded-lg border border-gray-700"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-gray-800 rounded-lg">
@@ -114,7 +117,7 @@ const Skills = () => {
           {specialties.map((specialty, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-gray-800/30 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300"
+              className="js_fadeInUp text-center p-6 bg-gray-800/30 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300"
             >
               <div className="flex justify-center mb-4">
                 <div className="p-3 bg-gray-800 rounded-full">

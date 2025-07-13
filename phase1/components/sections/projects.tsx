@@ -5,6 +5,7 @@ import { featuredProjects } from "@/data/projects";
 import { useI18n } from "@/hooks/useI18n";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { intersectionAnimation } from "@/lib/animations/fadeInUp";
 
 const Projects = () => {
   const [password, setPassword] = useState("");
@@ -16,11 +17,13 @@ const Projects = () => {
   const correctPassword = process.env.NEXT_PUBLIC_PORTFOLIO_PASSWORD;
 
   useEffect(() => {
-    // セッションストレージで認証状態を保持
     const authStatus = sessionStorage.getItem("portfolio_auth");
     if (authStatus === "authenticated") {
       setIsAuthenticated(true);
     }
+    setTimeout(() => {
+      intersectionAnimation();
+    }, 0);
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -44,13 +47,13 @@ const Projects = () => {
       <section id="projects" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 js_fadeInUp">
               Featured{" "}
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Projects
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto js_fadeInUp">
               {locale === "ja"
                 ? "国際的なクライアント向けに構築されたプレミアムウェブサイトとアプリケーションのショーケース。"
                 : "A showcase of premium websites and applications built for international clients."}
@@ -61,7 +64,7 @@ const Projects = () => {
             {t.map((project, index) => (
               <div
                 key={project.id}
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300"
+                className="js_fadeInUp group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -113,62 +116,6 @@ const Projects = () => {
               </div>
             ))}
           </div>
-          {/* <div className="mt-16 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="p-6 bg-gray-900 rounded-lg border border-gray-800">
-                {isJapanese ? (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">18+</div>
-                    <div className="text-gray-400">納品済みウェブサイト</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">18+</div>
-                    <div className="text-gray-400">Websites Delivered</div>
-                  </>
-                )}
-              </div>
-              <div className="p-6 bg-gray-900 rounded-lg border border-gray-800">
-                {isJapanese ? (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">100%</div>
-                    <div className="text-gray-400">クライアント満足度</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">100%</div>
-                    <div className="text-gray-400">Client Satisfaction</div>
-                  </>
-                )}
-              </div>
-              <div className="p-6 bg-gray-900 rounded-lg border border-gray-800">
-                {isJapanese ? (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">3+</div>
-                    <div className="text-gray-400">年の経験</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">3+</div>
-                    <div className="text-gray-400">Years Experience</div>
-                  </>
-                )}
-              </div>
-              <div className="p-6 bg-gray-900 rounded-lg border border-gray-800">
-                {isJapanese ? (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">5+</div>
-                    <div className="text-gray-400">使用技術</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-2xl font-bold text-white mb-2">5+</div>
-                    <div className="text-gray-400">Technologies</div>
-                  </>
-                )}
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     );
@@ -177,7 +124,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
       <div className="max-w-md w-full mx-4">
-        <div className="bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-lg p-8">
+        <div className="js_fadeInUp bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-lg p-8">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <div className="p-3 bg-blue-500/20 rounded-full">
