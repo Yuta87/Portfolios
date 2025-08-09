@@ -10,7 +10,6 @@ import {
   Github,
   MessageSquare,
 } from "lucide-react";
-import { title } from "node:process";
 import { useEffect } from "react";
 
 const Contact = () => {

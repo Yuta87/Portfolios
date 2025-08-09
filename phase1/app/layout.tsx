@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Yuta Nishizaki - Frontend & WordPress Developer",
     description:
       "Portfolio of Yuta Nishizaki, a professional Frontend & WordPress Developer based in The Hague, Netherlands. Specializing in premium web development, React, Next.js, and international projects.",
-    url: "https://portfolio-blush-theta-48.vercel.app/en",
+    url: "https://portfolio-blush-theta-48.vercel.app",
     siteName: "Yuta Nishizaki Portfolio",
     locale: "en_US",
     type: "website",
